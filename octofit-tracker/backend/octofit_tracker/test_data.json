@@ -1,0 +1,20 @@
+{
+  "users": [
+    {"email": "user1@example.com", "name": "User One", "password": "password1"},
+    {"email": "user2@example.com", "name": "User Two", "password": "password2"}
+  ],
+  "teams": [
+    {"name": "Team Alpha", "members": ["user1@example.com", "user2@example.com"]}
+  ],
+  "activities": [
+    {"user": "user1@example.com", "activity_type": "Running", "duration": 30, "date": "2025-04-10"},
+    {"user": "user2@example.com", "activity_type": "Cycling", "duration": 45, "date": "2025-04-10"}
+  ],
+  "leaderboard": [
+    {"team": "Team Alpha", "points": 100}
+  ],
+  "workouts": [
+    {"name": "Morning Yoga", "description": "A relaxing morning yoga session."},
+    {"name": "HIIT", "description": "High-intensity interval training."}
+  ]
+}

@@ -25,8 +25,6 @@ SECRET_KEY = "django-insecure-75@u6i+ojlne6x4ra1^lbi#+sop6cpxgbz=-^=wi%ktv3z)2*7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -40,7 +38,9 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
+    'octofit_tracker',
     'tracker',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +52,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 
 ROOT_URLCONF = "octofit_tracker.urls"
 
@@ -78,9 +80,9 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'octofit_db',
     }
 }
 
